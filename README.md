@@ -15,7 +15,7 @@
 </div>
 
 <div align="center" style="margin-top: 16px;">
-  <a href="https://www.starnustech.com/" target="_blank" style="display:inline-block;padding:12px 28px;background:#1a73e8;color:#fff;font-weight:bold;border-radius:6px;text-decoration:none;font-size:1.2em;">🌐 Visit Starnus Technology B.V.</a>
+  <a href="https://www.starnustech.com/" target="_blank" style="display:inline-block;padding:12px 28px;background:#1a73e8;color:#fff;font-weight:bold;border-radius:6px;text-decoration:none;font-size:1.2em;">🌐 Visit Starnus</a>
 </div>
 
 ## ⚠️ **IMPORTANT LEGAL DISCLAIMER**
