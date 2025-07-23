@@ -14,6 +14,10 @@
   **Professional LinkedIn automation tool that connects to your existing Chrome session for authentic, detection-resistant automation.**
 </div>
 
+<div align="center" style="margin-top: 16px;">
+  <a href="https://www.starnustech.com/" target="_blank" style="display:inline-block;padding:12px 28px;background:#1a73e8;color:#fff;font-weight:bold;border-radius:6px;text-decoration:none;font-size:1.2em;">🌐 Visit Starnus Technology B.V.</a>
+</div>
+
 ## ⚠️ **IMPORTANT LEGAL DISCLAIMER**
 
 **READ [DISCLAIMER.md](DISCLAIMER.md) BEFORE USING THIS SOFTWARE**
