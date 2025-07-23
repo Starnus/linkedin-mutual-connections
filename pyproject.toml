@@ -1,47 +1,53 @@
 [project]
-name = "browser-use"
-description = "Make websites accessible for AI agents"
-authors = [{ name = "Gregor Zunic" }]
-version = "0.5.5"
+name = "browser-use-linkedin"
+description = "AI-powered LinkedIn automation tool by Starnus Technology B.V."
+authors = [
+    { name = "Starnus Technology B.V.", email = "contact@starnus.com" },
+    { name = "Gregor Zunic" }
+]
+version = "1.0.0"
 readme = "README.md"
 requires-python = ">=3.11,<4.0"
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+keywords = ["linkedin", "automation", "ai", "browser", "scraping", "networking"]
+homepage = "https://github.com/Starnus/browser-use-linkedin"
+repository = "https://github.com/Starnus/browser-use-linkedin"
 dependencies = [
-    "aiofiles>=24.1.0",
-    "anyio>=4.9.0",
-    "bubus>=1.4.5",
-    "google-api-core>=2.25.0",
-    "httpx>=0.28.1",
-    "markdownify==1.1.0",
-    "patchright>=1.52.5",
+    # Core browser automation
     "playwright>=1.52.0",
-    "portalocker>=2.7.0,<3.0.0",
-    "posthog>=3.7.0",
-    "psutil>=7.0.0",
-    "pydantic>=2.11.5",
-    "pyobjc>=11.0; platform_system == 'darwin'",
-    "pyperclip>=1.9.0",
+    "patchright>=1.52.5",
+    
+    # LinkedIn automation essentials
+    "google-generativeai>=0.8.0",
     "python-dotenv>=1.0.1",
+    "openpyxl>=3.1.0",  # Excel file handling
+    "pandas>=2.0.0",    # Data processing
+    
+    # Browser-use core dependencies
+    "aiofiles>=24.1.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.11.5",
+    "psutil>=7.0.0",
     "requests>=2.32.3",
-    "screeninfo>=0.8.1; platform_system != 'darwin'",
     "typing-extensions>=4.12.2",
-    "uuid7>=0.1.0",
-    "authlib>=1.6.0",
-    "google-genai>=1.21.1",
-    "openai>=1.81.0",
+    "markdownify==1.1.0",
+    "bubus>=1.4.5",
+    
+    # Optional LLM providers (users can choose)
     "anthropic>=0.54.0",
-    "groq>=0.28.0",
-    "ollama>=0.5.1",
-    "google-api-python-client>=2.174.0",
-    "google-auth>=2.40.3",
-    "google-auth-oauthlib>=1.2.2",
-    "mcp>=1.10.1",
-    "pypdf>=5.7.0",
-    "markdown-pdf==1.5",
+    "openai>=1.81.0",
 ]
 # google-api-core: only used for Google LLM APIs
 # pyperclip: only used for examples that use copy/paste
@@ -54,33 +60,17 @@ dependencies = [
 # textual: used for terminal UI
 
 [project.optional-dependencies]
-cli = [
-    "rich>=14.0.0",
-    "click>=8.1.8",
-    "textual>=3.2.0",
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.11.0",
 ]
-aws = [
-    "boto3>=1.38.45"
-]
-examples = [
-    # botocore: only needed for Bedrock Claude boto3 examples/models/bedrock_claude.py
-    "botocore>=1.37.23",
-    "imgcat>=0.6.0",
-    "stagehand-py>=0.3.6",
-    "browserbase>=0.4.0",
-    "langchain-openai>=0.3.26",
-]
-eval = [
-    "lmnr[all]>=0.6.11",
-    "anyio>=4.9.0",
-    "Pillow>=11.2.1",
-    "psutil>=7.0.0",
-    "datamodel-code-generator>=0.26.0",
-    "hyperbrowser==0.47.0",
-    "browserbase==1.4.0",
-]
-all = [
-    "browser-use[cli,examples,aws]",
+all-llms = [
+    "openai>=1.81.0",
+    "groq>=0.28.0",
+    "ollama>=0.5.1",
+    "google-auth>=2.40.3",
+    "google-api-python-client>=2.174.0",
 ]
 
 # will prefer to use local source code checked out in ../../browser-use (if present) instead of pypi browser-use package
@@ -89,11 +79,14 @@ all = [
 
 
 [project.urls]
-Repository = "https://github.com/browser-use/browser-use"
+Documentation = "https://github.com/Starnus/browser-use-linkedin/blob/main/README.md"
+Homepage = "https://github.com/Starnus/browser-use-linkedin"
+Repository = "https://github.com/Starnus/browser-use-linkedin"
+"Bug Tracker" = "https://github.com/Starnus/browser-use-linkedin/issues"
+"Security Policy" = "https://github.com/Starnus/browser-use-linkedin/blob/main/SECURITY.md"
 
 [project.scripts]
-browseruse = "browser_use.cli:main"
-browser-use = "browser_use.cli:main"
+linkedin-automation = "linkedin_automation:main"
 
 [build-system]
 requires = ["hatchling"]

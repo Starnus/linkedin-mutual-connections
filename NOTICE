@@ -1,7 +1,18 @@
+Browser-Use LinkedIn Automation
+Copyright (c) 2025 Starnus Technology B.V.
+
+This software contains code derived from browser-use:
+https://github.com/browser-use/browser-use
+Copyright (c) 2024 Gregor Zunic
+Licensed under the MIT License
+
+====
+
+Original browser-use License:
+
 MIT License
 
 Copyright (c) 2024 Gregor Zunic
-Copyright (c) 2025 Starnus Technology B.V. - LinkedIn automation extensions
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +31,23 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+====
+
+Starnus Contributions:
+
+The following components were developed by Starnus Technology B.V.:
+- LinkedIn profile automation system
+- Mutual connections extraction functionality
+- Excel integration and data management
+- Personal Chrome browser session integration
+- LinkedIn-specific automation workflows
+
+These contributions are also licensed under the MIT License.
+
+====
+
+Third-party Dependencies:
+
+This software may include additional third-party open source software.
+See the respective license files for each dependency for details. 

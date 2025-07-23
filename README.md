@@ -1,278 +1,309 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./static/browser-use-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="./static/browser-use.png">
-  <img alt="Shows a black Browser Use Logo in light color mode and a white one in dark color mode." src="./static/browser-use.png"  width="full">
-</picture>
+# Browser-Use LinkedIn Automation
 
-<h1 align="center">Enable AI to control your browser 🤖</h1>
+<div align="center">
+  <img src="./static/browser-use.png" alt="Browser-Use LinkedIn Automation" width="600">
+  
+  <h2>🚀 AI-Powered LinkedIn Automation by Starnus</h2>
+  
+  [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+  [![Starnus](https://img.shields.io/badge/Made%20by-Starnus-blue)](https://github.com/Starnus)
+  [![Browser-Use](https://img.shields.io/badge/Based%20on-Browser--Use-orange)](https://github.com/browser-use/browser-use)
+  
+  **Professional LinkedIn automation tool that connects to your existing Chrome session for authentic, detection-resistant automation.**
+</div>
 
-[![GitHub stars](https://img.shields.io/github/stars/gregpr07/browser-use?style=social)](https://github.com/gregpr07/browser-use/stargazers)
-[![Discord](https://img.shields.io/discord/1303749220842340412?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://link.browser-use.com/discord)
-[![Cloud](https://img.shields.io/badge/Cloud-☁️-blue)](https://cloud.browser-use.com)
-[![Documentation](https://img.shields.io/badge/Documentation-📕-blue)](https://docs.browser-use.com)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Gregor?style=social)](https://x.com/intent/user?screen_name=gregpr07)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Magnus?style=social)](https://x.com/intent/user?screen_name=mamagnus00)
-[![Weave Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fapp.workweave.ai%2Fapi%2Frepository%2Fbadge%2Forg_T5Pvn3UBswTHIsN1dWS3voPg%2F881458615&labelColor=#EC6341)](https://app.workweave.ai/reports/repository/org_T5Pvn3UBswTHIsN1dWS3voPg/881458615)
+## ⚠️ **IMPORTANT LEGAL DISCLAIMER**
 
-🌐 Browser-use is the easiest way to connect your AI agents with the browser.
+**READ [DISCLAIMER.md](DISCLAIMER.md) BEFORE USING THIS SOFTWARE**
 
-💡 See what others are building and share your projects in our [Discord](https://link.browser-use.com/discord)! Want Swag? Check out our [Merch store](https://browsermerch.com).
+You are solely responsible for ensuring your use complies with LinkedIn's Terms of Service. By using this software, you agree to indemnify and hold harmless Starnus Technology B.V. and contributors from any liability arising from your use.
 
-🌤️ Skip the setup - try our <b>hosted version</b> for instant browser automation! <b>[Try the cloud ☁︎](https://cloud.browser-use.com)</b>.
+## 🌟 Features
 
-# Quick start
+- **🔐 Authentic Session**: Uses your existing Chrome profile with LinkedIn login
+- **🤖 AI-Powered**: Leverages advanced language models for intelligent automation
+- **📊 Excel Integration**: Processes LinkedIn profiles from Excel files
+- **🔍 Mutual Connections**: Automatically extracts mutual connection data
+- **🛡️ Detection Resistant**: Maintains natural browsing patterns
+- **🔧 Cross-Platform**: Works on Windows, macOS, and Linux
 
-With pip (Python>=3.11):
+## 🏢 About Starnus
 
+This project is developed and maintained by **Starnus Technology B.V.**, showcasing our expertise in:
+- AI-powered automation solutions
+- Browser automation and web scraping
+- Professional networking tools
+- Enterprise-grade software development
+
+Visit us at: [github.com/Starnus](https://github.com/Starnus)
+
+## 🚀 First-Time Setup Guide
+
+### Prerequisites Check
+
+Before starting, ensure you have:
+- **Python 3.11+** - [Download from python.org](https://python.org/downloads/)
+- **Google Chrome** - [Download here](https://www.google.com/chrome/)
+- **Google AI API Key** - [Get one from Google AI Studio](https://aistudio.google.com/apikey)
+- **LinkedIn Account** - You must be logged into LinkedIn
+
+### Step-by-Step Installation
+
+#### 1. **Clone & Navigate**
 ```bash
-pip install browser-use
+git clone https://github.com/Starnus/browser-use-linkedin.git
+cd browser-use-linkedin
 ```
 
-Install the browser:
-
+#### 2. **Python Environment Setup** (Recommended)
 ```bash
+# Create virtual environment
+python -m venv linkedin-automation
+# Activate it
+source linkedin-automation/bin/activate  # Linux/Mac
+# OR
+linkedin-automation\Scripts\activate     # Windows
+```
+
+#### 3. **Install Dependencies**
+```bash
+# Install Python packages
+pip install -r requirements.txt
+
+# Install browser (this may take 2-3 minutes)
 playwright install chromium --with-deps --no-shell
 ```
 
-Spin up your agent:
-
-```python
-import asyncio
-from dotenv import load_dotenv
-load_dotenv()
-from browser_use import Agent
-from browser_use.llm import ChatOpenAI
-
-async def main():
-    agent = Agent(
-        task="Compare the price of gpt-4o and DeepSeek-V3",
-        llm=ChatOpenAI(model="o4-mini", temperature=1.0),
-    )
-    await agent.run()
-
-asyncio.run(main())
-```
-
-Add your API keys for the provider you want to use to your `.env` file.
-
+#### 4. **Environment Configuration**
+Create a `.env` file in the project root:
 ```bash
-OPENAI_API_KEY=
-ANTHROPIC_API_KEY=
-AZURE_OPENAI_ENDPOINT=
-AZURE_OPENAI_KEY=
-GOOGLE_API_KEY=
-DEEPSEEK_API_KEY=
-GROK_API_KEY=
-NOVITA_API_KEY=
+# Windows
+echo GOOGLE_API_KEY=your_actual_api_key_here > .env
+
+# Linux/Mac  
+echo "GOOGLE_API_KEY=your_actual_api_key_here" > .env
 ```
 
-For other settings, models, and more, check out the [documentation 📕](https://docs.browser-use.com).
+**⚠️ Important**: Replace `your_actual_api_key_here` with your real Google AI API key!
 
-### Test with UI
+#### 5. **Prepare Your Data**
+Create an Excel file (.xlsx) with LinkedIn URLs:
 
-You can test browser-use using its [Web UI](https://github.com/browser-use/web-ui) or [Desktop App](https://github.com/browser-use/desktop).
+| profile_url | name |
+|-------------|------|
+| https://www.linkedin.com/in/johndoe/ | John Doe |
+| https://www.linkedin.com/in/janesmith/ | Jane Smith |
 
-### Test with an interactive CLI
+**Save as**: `linkedin_profiles.xlsx`
 
-You can also use our `browser-use` interactive CLI (similar to `claude` code):
+#### 6. **LinkedIn Session Setup**
+1. Open Chrome manually
+2. Log into LinkedIn
+3. Keep this browser window open
+4. **Important**: Make sure you're fully logged in before running the automation
 
+### 🏃‍♂️ First Run
+
+#### Option 1: Interactive Automation
 ```bash
-pip install "browser-use[cli]"
-browser-use
+python linkedin_automation.py
+```
+This opens an interactive menu where you can test the connection and run custom tasks.
+
+#### Option 2: Batch Process Excel File
+```bash
+cd linkedin_mutual_connections
+python main.py linkedin_profiles.xlsx
+```
+This processes your Excel file automatically and updates it with mutual connections.
+
+### ✅ Verify Setup
+After first installation, test with:
+```bash
+python -c "import browser_use; print('✅ Installation successful!')"
 ```
 
-## MCP Integration
+## 📋 Detailed Setup Guide
 
-Browser-use supports the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/), enabling integration with Claude Desktop and other MCP-compatible clients.
-
-### Use as MCP Server with Claude Desktop
-
-Add browser-use to your Claude Desktop configuration:
-
-```json
-{
-  "mcpServers": {
-    "browser-use": {
-      "command": "uvx",
-      "args": ["browser-use", "--mcp"],
-      "env": {
-        "OPENAI_API_KEY": "sk-..."
-      }
-    }
-  }
-}
+### 1. LinkedIn Profile URLs
+Your Excel file should contain LinkedIn profile URLs in this format:
+```
+https://www.linkedin.com/in/username/
+https://www.linkedin.com/in/another-user/
 ```
 
-This gives Claude Desktop access to browser automation tools for web scraping, form filling, and more.
+### 2. Chrome Configuration
+The tool will automatically:
+- Close existing Chrome instances
+- Launch Chrome with debugging enabled
+- Connect to your existing profile
+- Maintain your LinkedIn session
 
-### Connect External MCP Servers to Browser-Use Agent
+### 3. Automation Process
+1. **Authentication Check**: Verifies LinkedIn login status
+2. **Profile Processing**: Iterates through Excel profiles
+3. **Data Extraction**: Collects mutual connections
+4. **Results Storage**: Updates Excel with findings
 
-Browser-use agents can connect to multiple external MCP servers to extend their capabilities:
+## 🔧 Configuration
 
+### Environment Variables
+```bash
+GOOGLE_API_KEY=your_api_key_here        # Required: Google AI API access
+CHROME_DEBUGGING_PORT=9222              # Optional: Chrome debug port
+LOG_LEVEL=INFO                          # Optional: Logging level
+```
+
+### Config File
+Customize settings in `linkedin_mutual_connections/modules/config.py`:
 ```python
-import asyncio
-from browser_use import Agent, Controller
-from browser_use.mcp.client import MCPClient
-from browser_use.llm import ChatOpenAI
-
-async def main():
-    # Initialize controller
-    controller = Controller()
-    
-    # Connect to multiple MCP servers
-    filesystem_client = MCPClient(
-        server_name="filesystem",
-        command="npx",
-        args=["-y", "@modelcontextprotocol/server-filesystem", "/Users/me/documents"]
-    )
-    
-    github_client = MCPClient(
-        server_name="github", 
-        command="npx",
-        args=["-y", "@modelcontextprotocol/server-github"],
-        env={"GITHUB_TOKEN": "your-github-token"}
-    )
-    
-    # Connect and register tools from both servers
-    await filesystem_client.connect()
-    await filesystem_client.register_to_controller(controller)
-    
-    await github_client.connect()
-    await github_client.register_to_controller(controller)
-    
-    # Create agent with MCP-enabled controller
-    agent = Agent(
-        task="Find the latest report.pdf in my documents and create a GitHub issue about it",
-        llm=ChatOpenAI(model="gpt-4o"),
-        controller=controller  # Controller has tools from both MCP servers
-    )
-    
-    # Run the agent
-    await agent.run()
-    
-    # Cleanup
-    await filesystem_client.disconnect()
-    await github_client.disconnect()
-
-asyncio.run(main())
+MUTUAL_CONNECTIONS_TO_EXTRACT = 10      # Max connections per profile
+PAGE_LOAD_TIMEOUT = 120000              # Page load timeout (ms)
+RETRY_ATTEMPTS = 3                      # Failed request retries
 ```
 
-See the [MCP documentation](https://docs.browser-use.com/customize/mcp-server) for more details.
+## 📊 Output Format
 
-# Demos
+The tool updates your Excel file with:
+- **mutual_connections**: List of mutual connection names
+- **status**: Processing status (done/processing/error)
+- **timestamp**: Last update time
 
-<br/><br/>
+## 🛡️ Security & Privacy
 
-[Task](https://github.com/browser-use/browser-use/blob/main/examples/use-cases/shopping.py): Add grocery items to cart, and checkout.
+- **No Password Storage**: Uses existing browser session
+- **Local Processing**: All data stays on your machine
+- **Encrypted Communication**: HTTPS-only connections
+- **Rate Limiting**: Respects LinkedIn's systems
 
-[![AI Did My Groceries](https://github.com/user-attachments/assets/a0ffd23d-9a11-4368-8893-b092703abc14)](https://www.youtube.com/watch?v=L2Ya9PYNns8)
+## 🔍 Troubleshooting
 
-<br/><br/>
+### First-Time Setup Issues
 
-Prompt: Add my latest LinkedIn follower to my leads in Salesforce.
+**❌ "Python not found" error**
+```bash
+# Check Python installation
+python --version
+# If not found, download from python.org
+```
 
-![LinkedIn to Salesforce](https://github.com/user-attachments/assets/50d6e691-b66b-4077-a46c-49e9d4707e07)
+**❌ "pip not found" error**
+```bash
+# Try python -m pip instead
+python -m pip install -r requirements.txt
+```
 
-<br/><br/>
+**❌ "playwright install failed"**
+```bash
+# Run with elevated permissions
+sudo playwright install chromium --with-deps  # Linux/Mac
+# Or run PowerShell as Administrator (Windows)
+```
 
-[Prompt](https://github.com/browser-use/browser-use/blob/main/examples/use-cases/find_and_apply_to_jobs.py): Read my CV & find ML jobs, save them to a file, and then start applying for them in new tabs, if you need help, ask me.'
+**❌ "Module 'browser_use' not found"**
+```bash
+# Ensure you're in the right directory
+ls  # Should see browser_use/ folder
+# Activate virtual environment if using one
+source linkedin-automation/bin/activate
+```
 
-https://github.com/user-attachments/assets/171fb4d6-0355-46f2-863e-edb04a828d04
+### Runtime Issues
 
-<br/><br/>
+**❌ Chrome won't start**
+```bash
+# Close all Chrome instances first
+taskkill /f /im chrome.exe          # Windows
+pkill -f Chrome                     # macOS/Linux
 
-[Prompt](https://github.com/browser-use/browser-use/blob/main/examples/browser/real_browser.py): Write a letter in Google Docs to my Papa, thanking him for everything, and save the document as a PDF.
+# Check if port 9222 is available
+netstat -an | grep 9222
+```
 
-![Letter to Papa](https://github.com/user-attachments/assets/242ade3e-15bc-41c2-988f-cbc5415a66aa)
+**❌ "LinkedIn not logged in" error**
+1. Open Chrome manually **first**
+2. Navigate to linkedin.com and log in completely
+3. **Keep this window open** while running the script
+4. Make sure you can see your LinkedIn feed
 
-<br/><br/>
+**❌ "Google API error"**
+```bash
+# Verify your API key
+echo $GOOGLE_API_KEY  # Linux/Mac
+echo %GOOGLE_API_KEY% # Windows
 
-[Prompt](https://github.com/browser-use/browser-use/blob/main/examples/custom-functions/save_to_file_hugging_face.py): Look up models with a license of cc-by-sa-4.0 and sort by most likes on Hugging face, save top 5 to file.
+# Test API key
+python -c "import google.generativeai as genai; print('API key format looks correct')"
+```
 
-https://github.com/user-attachments/assets/de73ee39-432c-4b97-b4e8-939fd7f323b3
+**❌ Excel file errors**
+- Ensure file is .xlsx format (not .xls or .csv)
+- Check LinkedIn URLs are complete (include https://)
+- Verify file isn't open in Excel while running
 
-<br/><br/>
+### Performance Issues
 
-## More examples
+**🐌 Slow processing**
+- Reduce `MUTUAL_CONNECTIONS_TO_EXTRACT` to 5
+- Check your internet connection
+- Use a paid Google AI plan for faster API responses
 
-For more examples see the [examples](examples) folder or join the [Discord](https://link.browser-use.com/discord) and show off your project. You can also see our [`awesome-prompts`](https://github.com/browser-use/awesome-prompts) repo for prompting inspiration.
+### Getting Help
 
-# Vision
+1. **First**: Check this troubleshooting section
+2. **Search**: [GitHub Issues](https://github.com/Starnus/browser-use-linkedin/issues)
+3. **Report**: Create a new issue with:
+   - Your OS (Windows/Mac/Linux)
+   - Python version (`python --version`)
+   - Error message (full text)
+   - Steps that led to the error
+4. **Enterprise Support**: contact@starnus.com
 
-Tell your computer what to do, and it gets it done.
+## 🤝 Contributing
 
-## Roadmap
+We welcome contributions! Please:
 
-### Agent
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality
+4. Submit a pull request
 
-- [ ] Improve agent memory to handle +100 steps
-- [ ] Enhance planning capabilities (load website specific context)
-- [ ] Reduce token consumption (system prompt, DOM state)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-### DOM Extraction
+## 📄 License & Attribution
 
-- [ ] Enable detection for all possible UI elements
-- [ ] Improve state representation for UI elements so that all LLMs can understand what's on the page
+This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
 
-### Workflows
+### Acknowledgments
 
-- [ ] Let user record a workflow - which we can rerun with browser-use as a fallback
-- [ ] Make rerunning of workflows work, even if pages change
+This project builds upon the excellent [browser-use](https://github.com/browser-use/browser-use) library:
+- Original work © 2024 Gregor Zunic
+- LinkedIn extensions © 2025 Starnus Technology B.V.
 
-### User Experience
+See [NOTICE](NOTICE) for complete attribution details.
 
-- [ ] Create various templates for tutorial execution, job application, QA testing, social media, etc. which users can just copy & paste.
-- [ ] Improve docs
-- [ ] Make it faster
+## ⚠️ Responsible Use
 
-### Parallelization
+This tool is designed for:
+- ✅ Professional networking research
+- ✅ Educational purposes
+- ✅ Legitimate business development
 
-- [ ] Human work is sequential. The real power of a browser agent comes into reality if we can parallelize similar tasks. For example, if you want to find contact information for 100 companies, this can all be done in parallel and reported back to a main agent, which processes the results and kicks off parallel subtasks again.
+**Do not use for:**
+- ❌ Spam or unsolicited messaging
+- ❌ Data harvesting violations
+- ❌ LinkedIn Terms of Service violations
 
-## Contributing
+## 📞 Support
 
-We love contributions! Feel free to open issues for bugs or feature requests. To contribute to the docs, check out the `/docs` folder.
-
-## 🧪 How to make your agents robust?
-
-We offer to run your tasks in our CI—automatically, on every update!
-
-- **Add your task:** Add a YAML file in `tests/agent_tasks/` (see the [`README there`](tests/agent_tasks/README.md) for details).
-- **Automatic validation:** Every time we push updates, your task will be run by the agent and evaluated using your criteria.
-
-## Local Setup
-
-To learn more about the library, check out the [local setup 📕](https://docs.browser-use.com/development/local-setup).
-
-`main` is the primary development branch with frequent changes. For production use, install a stable [versioned release](https://github.com/browser-use/browser-use/releases) instead.
+- **Documentation**: [docs/](docs/)
+- **Issues**: [GitHub Issues](https://github.com/Starnus/browser-use-linkedin/issues)
+- **Security**: [SECURITY.md](SECURITY.md)
+- **Business Inquiries**: support@starnustech.com
 
 ---
 
-## Swag
-
-Want to show off your Browser-use swag? Check out our [Merch store](https://browsermerch.com). Good contributors will receive swag for free 👀.
-
-## Citation
-
-If you use Browser Use in your research or project, please cite:
-
-```bibtex
-@software{browser_use2024,
-  author = {Müller, Magnus and Žunič, Gregor},
-  title = {Browser Use: Enable AI to control your browser},
-  year = {2024},
-  publisher = {GitHub},
-  url = {https://github.com/browser-use/browser-use}
-}
-```
-
- <div align="center"> <img src="https://github.com/user-attachments/assets/06fa3078-8461-4560-b434-445510c1766f" width="400"/> 
- 
-[![Twitter Follow](https://img.shields.io/twitter/follow/Gregor?style=social)](https://x.com/intent/user?screen_name=gregpr07)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Magnus?style=social)](https://x.com/intent/user?screen_name=mamagnus00)
- 
- </div>
-
 <div align="center">
-Made with ❤️ in Zurich and San Francisco
- </div>
+  <p><strong>Made with ❤️ by <a href="https://github.com/Starnus">Starnus</a></strong></p>
+  <p>Building the future of intelligent automation</p>
+</div>

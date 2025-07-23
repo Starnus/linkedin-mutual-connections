@@ -1,55 +1,105 @@
-# Cache files
-.DS_Store
+# Sensitive Data - Never commit personal information
+*.xlsx
+*.csv
+*.log
+*.bak
+*.backup
+*_backup_*
+linkedin_profiles*
+automation_results*
+personal_data*
+
+# Environment and Configuration
+.env
+.env.local
+.env.*.local
+config/local.*
+config/personal.*
+
+# Browser and Session Data
+*.profile
+*.session
+user_data/
+chrome_profile/
+browser_cache/
+
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-.mypy_cache/
-.ruff_cache/
-.pytest_cache/
-.ipynb_checkpoints
-~/
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
 # Virtual Environments
-.venv*
 venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
 
 # IDEs
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
 
-# Build files
-dist/
+# Testing
+.tox/
+.nox/
+.coverage
+.pytest_cache/
+cover/
+htmlcov/
 
-# Data files
-*.gif
-*.txt
-*.pdf
-*.csv
-*.json
-*.jsonl
-*.log
-*.bak
+# Documentation
+docs/_build/
 
-# Secrets and sensitive files
-secrets.env
-.env
-browser_cookies.json
-cookies.json
-gcp-login.json
-saved_trajectories/
-old_tests/
-AgentHistory.json
-AgentHistoryList.json
-private_example.py
-private_example
-CLAUDE.local.md
+# Jupyter Notebook
+.ipynb_checkpoints
 
-uv.lock
-temp
-tmp
+# pyenv
+.python-version
 
-# Google API credentials
-credentials.json
-token.json
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
 
-!docs/docs.json
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Application specific
+linkedin_automation.log*
+*.trace
+screenshots/
+downloads/
+uploads/
