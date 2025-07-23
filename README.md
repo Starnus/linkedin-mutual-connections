@@ -1,7 +1,9 @@
 # Browser-Use LinkedIn Automation
 
 <div align="center">
-  <img src="./static/browser-use.png" alt="Browser-Use LinkedIn Automation" width="600">
+  <img src="./static/browser-use.png" alt="Browser-Use LinkedIn Automation" width="180" style="display:inline-block;vertical-align:middle;"/>
+  <span style="display:inline-block;width:32px;"></span>
+  <img src="./static/starnus-logo.png" alt="Starnus Technology B.V." width="180" style="display:inline-block;vertical-align:middle;"/>
   
   <h2>🚀 AI-Powered LinkedIn Automation by Starnus</h2>
   
